@@ -65,7 +65,8 @@ abcBirthdayPicker.directive('abcBirthdayPicker', ['$timeout', function($timeout)
 
                 if (el_month.val() && el_day.val() && el_year.val() && el_month.val() != '0' && el_day.val() != '0' && el_year.val() != '0') {
                     ngModelController.$setViewValue(
-                        scope._adjustViewDateFormat(el_birthdate.val(), scope.option.dateFormat)
+                        // scope._adjustViewDateFormat(el_birthdate.val(), scope.option.dateFormat)
+                        el_birthdate.val()
                     );
                 } else {
                     ngModelController.$setViewValue(null);
@@ -88,7 +89,8 @@ abcBirthdayPicker.directive('abcBirthdayPicker', ['$timeout', function($timeout)
 
                     if (default_date) {
                         angular.extend(scope.option, {
-                            defaultDate: scope._adjustModelDateFormat(default_date, scope.option.dateFormat)
+                            defaultDate: default_date
+                            // defaultDate: scope._adjustModelDateFormat(default_date, scope.option.dateFormat)
                         });
                     } else {
                         delete scope.option.defaultDate;
