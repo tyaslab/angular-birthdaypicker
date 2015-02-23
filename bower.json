@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "homepage": "https://github.com/tyaslab/angular-birthdaypicker",
   "description": "Angular Directive for Abecoffman's Birthdaypicker",
+  "main": "birthdaypicker.js",
   "moduleType": [
     "globals"
   ],
