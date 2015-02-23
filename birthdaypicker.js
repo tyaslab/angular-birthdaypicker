@@ -95,6 +95,7 @@ abcBirthdayPicker.directive('abcBirthdayPicker', ['$timeout', function($timeout)
                     } else {
                         delete scope.option.defaultDate;
                     }
+                    element.html('');
                     element.birthdaypicker(scope.option);
                 };
             } else {
