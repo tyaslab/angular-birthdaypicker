@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Angular Directive for Abecoffman's Birthdaypicker</title>
+</head>
+<body data-ng-app="app">
+
+<div data-ng-controller="MyController">
+    <span data-abc-birthday-picker="{dateFormat:'littleEndian'}" data-ng-model="bday"></span>
+    {{  bday }}
+    <span data-abc-birthday-picker="" data-ng-model="bday2"></span> <!-- middleEndian -->
+    {{  bday2 }}
+    <span data-abc-birthday-picker="{dateFormat:'bigEndian'}" data-ng-model="bday3"></span>
+    {{  bday3 }}
+</div>
+
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/abecoffman_birthdaypicker/bday-picker.js"></script>
+<script src="birthdaypicker.js"></script>
+<script>
+var app = angular.module('app', ['abcBirthdayPicker']);
+
+app.controller('MyController', ['$scope', function($scope) {
+    $scope.init = function() {
+        $scope.bday = '11-02-1988'; // littleEndian
+        $scope.bday3 = '1988-02-11'; // bigEndian
+        console.log('Entering My Controller');
+    };
+
+    $scope.init();
+}]);
+</script>
+</body>
+</html>
